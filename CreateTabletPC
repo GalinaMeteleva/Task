@@ -1,0 +1,30 @@
+package by.tc.task01.service.impl;
+
+import java.util.Map;
+import java.util.HashMap;
+import java.util.List;
+import java.util.ArrayList;
+
+import by.tc.task01.service.impl.ApplianceCreator;
+import by.tc.task01.entity.Appliance;
+import by.tc.task01.service.impl.CreateMain;
+
+public class CreateTabletPC implements Command  {
+	
+	Appliance appliance;
+	
+	@Override
+	public void execute()  {
+		
+		ApplianceCreator cr = new ApplianceCreator();
+		Object str = cr.getParameters();
+	}
+	public Appliance adding(Map<String, String>parameters, List<Appliance>appliances)  {
+		
+		appliance = createTabletPC(parameters);
+		
+		appliances.add(appliance);
+		
+		return appliance;
+	}
+}
