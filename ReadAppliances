@@ -68,12 +68,12 @@ public class ReadAppliances {
 	public void setApplianceData(List<String>applianceData)  {
 		this.applianceData = applianceData;
 	}
-    StringBuilder content = new StringBuilder("C:/Documents/java/crit.txt");
+    StringBuilder content = new StringBuilder("C:/Dir/resources/resource.txt");
 	
 	public String readingAppliance(Criteria criteria) throws FileNotFoundException, IOException {
 		this.criteria = criteria;
 		
-		BufferedReader reader = new BufferedReader(new FileReader("C:/Documents/java/crit.txt"));
+		BufferedReader reader = new BufferedReader(new FileReader("C:/Dir/resources/resource.txt"));
 			
 		String line;
 		while((line = reader.readLine()) != null)  {
