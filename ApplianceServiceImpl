@@ -1,0 +1,41 @@
+package by.tc.task01.service.impl;
+
+import by.tc.task01.dao.ApplianceDAO;
+import by.tc.task01.dao.DAOFactory;
+import by.tc.task01.entity.Appliance;
+import by.tc.task01.entity.criteria.Criteria;
+import by.tc.task01.main.PrintApplianceInfo;
+import by.tc.task01.service.ApplianceService;
+import by.tc.task01.service.validation.Validator;
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class ApplianceServiceImpl {
+	
+	public ApplianceServiceImpl()  {
+	}
+	
+	Appliance appliance;
+	
+	@Override
+	public Appliance find(Criteria criteria)  {
+		if(!Validator.criteriaValidator(criteria))  {
+			return null;
+		}
+		DAOFactory factory = DAOFactory.getInstance();
+		ApplianceDAO applianceDAO = factory.getApplianceDAO();
+		
+		Appliance appliance = applianceDAO.find(criteria);
+		
+		return appliance;
+	}
+	public void createFinalApplianceData(List<String>applianceData)  {
+		
+		List<String> finalApplianceData = new ArrayList<String>();
+		
+		finalApplianceData.addAll(0, applianceData);
+		
+		PrintApplianceInfo.print(finalApplianceData);
+	}
+}
