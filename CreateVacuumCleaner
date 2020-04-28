@@ -1,0 +1,31 @@
+package by.tc.task01.service.impl;
+
+import by.tc.task01.service.impl.ApplianceCreator;
+import by.tc.task01.entity.Appliance;
+import by.tc.task01.service.impl.CreateMain;
+
+import java.util.Map;
+import java.util.HashMap;
+import java.util.List;
+import java.util.ArrayList;
+
+public class CreateVacuumCleaner implements Command  {
+	
+	Appliance appliance;
+	
+	@Override
+	public void execute()  {
+		
+		ApplianceCreator cr = new ApplianceCreator();
+		Object str = cr.getParameters();
+	}
+	public Appliance adding(Map<String, String>parameters, List<Appliance>appliances)  {
+			
+		appliance = createVacuumCleaner(parameters);
+		
+		appliances.add(appliance);
+	
+		return appliance;
+	}
+}
+
