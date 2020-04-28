@@ -1,0 +1,87 @@
+package by.tc.task01.entity;
+
+import by.tc.task01.entity.criteria.Criteria;
+import by.tc.task01.entity.criteria.SearchCriteria;
+import by.tc.task01.entity.Laptop;
+import by.tc.task01.entity.Oven;
+import by.tc.task01.entity.Refrigerator;
+import by.tc.task01.entity.Speakers;
+import by.tc.task01.entity.TabletPC;
+import by.tc.task01.entity.VacuumCleaner;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Appliance {
+	
+	public Appliance()  {
+	}
+	
+	Appliance appliance;
+	
+	public Appliance getAppliance()  {
+		return appliance;
+	}
+	public void setAppliance(Appliance appliance)  {
+		this.appliance = appliance;
+	}
+	@Override
+	public int hashCode()  {
+		final int prime = 31;
+		int result = super.hashCode();
+		result = prime * result + ((appliance == null) ? 0 : appliance.hashCode());
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj)  {
+		if(this == obj)  {
+			return true;
+		}
+		if(!super.equals(obj)) {
+			return false;
+		}
+		if(getClass() != obj.getClass())  {
+			return false;
+		}
+		Appliance other = (Appliance) obj;
+		if(appliance == null)  {
+			if(other.appliance != null)  {
+				return false;
+			}
+		}
+		else if(!appliance.equals(other.appliance))  {
+			return false;
+		}
+		return true;
+	}
+	@Override
+	public String toString()  {
+		return "appliance" + appliance;
+	}
+	
+	String[] appliancesList = new String[6];
+	
+	public String appliancesList()  {
+		
+		appliancesList[0] = "Oven";
+		appliancesList[1] = "Laptop";
+		appliancesList[2] = "Refrigerator";
+		appliancesList[3] = "Speakers";
+		appliancesList[4] = "TabletPC";
+		appliancesList[5] = "VacuumCleaner";
+		
+		return appliancesList[6];
+	}
+	public String getAppliancesList()  {
+		return appliancesList[6];
+	}
+	public void setAppliancesList(String[] appliancesList)  {
+		this.appliancesList = appliancesList;
+	}
+			
+	public Appliance find(Criteria criteria)  {
+		
+		return null;
+	}
+}
+
