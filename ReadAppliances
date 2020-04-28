@@ -1,0 +1,113 @@
+package by.tc.task01.dao.impl;
+
+import by.tc.task01.dao.ApplianceDAO;
+import by.tc.task01.entity.Appliance;
+import by.tc.task01.entity.criteria.Criteria;
+import by.tc.task01.main.Main;
+
+import java.io.FileReader;
+import java.io.BufferedReader;
+import java.lang.StringBuilder;
+import java.io.IOException;
+import java.io.FileNotFoundException;
+import java.util.ArrayList;
+import java.util.List;
+
+public class ReadAppliances {
+	
+	public ReadAppliances()  {
+	}
+	
+	private Criteria criteria;
+	
+	public Criteria getCriteria()  {
+		return criteria;
+	}
+	public void setCriteria(Criteria criteria)  {
+		this.criteria = criteria;
+	}
+	@Override
+	public int hashCode()  {
+		final int prime = 31;
+		int result = super.hashCode();
+		result = prime * result + ((criteria == null) ? 0 : criteria.hashCode());
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj)  {
+		if(this == obj)  {
+			return true;
+		}
+		if(!super.equals(obj)) {
+			return false;
+		}
+		if(getClass() != obj.getClass())  {
+			return false;
+		}
+		Criteria other = (Criteria) obj;
+		if(criteria == null)  {
+			if(other.criteria != null)  {
+				return false;
+			}
+		}
+		else if(!criteria.equals(other.criteria))  {
+			return false;
+		}
+		return true;
+	}
+	@Override
+	public String toString()  {
+		return "criteria" + criteria;
+	}
+	
+	private List<String> applianceData = new ArrayList<String>();
+	
+	public List<String> getApplianceData()  {
+		return applianceData;
+	}
+	public void setApplianceData(List<String>applianceData)  {
+		this.applianceData = applianceData;
+	}
+    StringBuilder content = new StringBuilder("C:/Documents/java/crit.txt");
+	
+	public String readingAppliance(Criteria criteria) throws FileNotFoundException, IOException {
+		this.criteria = criteria;
+		
+		BufferedReader reader = new BufferedReader(new FileReader("C:/Documents/java/crit.txt"));
+			
+		String line;
+		while((line = reader.readLine()) != null)  {
+			content.append(line);
+			content.append(System.lineSeparator());
+		}
+		return content.toString();
+	}
+	
+	public String findCategory(List<String>appliancesList)  {
+		
+		Appliance appliance = new Appliance();
+		String str = appliance.getAppliancesList();
+		
+		for(int i = 0; i < appliancesList.size(); i++)  {
+			
+			int index = content.indexOf(appliancesList.get(i));
+			
+			if(index == -1)  {
+				System.out.println("Категория не найдена");
+			}
+			else  {
+				System.out.println("Категория найдена");
+			}
+			String str2 = content.substring(index, content.length() - index);
+			
+			if(criteria.contains(str2.charAt(0)) == false)  {
+				System.out.println("Параметр не найден");
+			}
+			else  {
+				applianceData.add(str2);
+				return str2;
+			}
+		}
+	}
+}
+
