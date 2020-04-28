@@ -13,5 +13,16 @@ public class Validator {
 			return false;
 		}
 	}
+	public static boolean applianceDataValidator(List<String>appliancesData)  {
+		
+		for(int i = 0; i < appliancesData.size(); i++)  {
+			if(appliancesData.get(i) != null)  {
+				return true;
+			}
+			else {
+				return false;
+			}
+		}
+		return true;
+	}
 }
-
