@@ -1,0 +1,94 @@
+package by.tc.task01.entity;
+
+public class TabletPC extends Appliance  {
+	
+	public TabletPC()  {
+	}
+	
+	TabletPC tabletPC = new TabletPC();
+	
+	public TabletPC getTabletPC()  {
+		return tabletPC;
+	}
+	public void setTabletPC(TabletPC tabletPC) {
+		this.tabletPC = tabletPC;
+	}
+	@Override
+	public int hashCode()  {
+		final int prime = 31;
+		int result = super.hashCode();
+		result = prime * result + ((tabletPC == null) ? 0 : tabletPC.hashCode());
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj)  {
+		if(this == obj)  {
+			return true;
+		}
+		if(!super.equals(obj)) {
+			return false;
+		}
+		if(getClass() != obj.getClass())  {
+			return false;
+		}
+		TabletPC other = (TabletPC) obj;
+		if(tabletPC == null)  {
+			if(other.tabletPC != null)  {
+				return false;
+			}
+		}
+		else if(!tabletPC.equals(other.tabletPC))  {
+			return false;
+		}
+		return true;
+	}
+	@Override
+	public String toString()  {
+		return "tabletPC" + tabletPC;
+	}
+
+	private double batteryCapacity;
+	private double displayInches;
+	private double memoryRom;
+	private double flashMemoryCapacity;
+	private String color;
+	
+	public TabletPC(double batteryCapacity, double displayInches, double memoryRom, double flashMemoryCapacity, String color)  {
+		this.batteryCapacity = batteryCapacity;
+		this.displayInches = displayInches;
+		this.memoryRom = memoryRom;
+		this.flashMemoryCapacity = flashMemoryCapacity;
+		this.color = color;
+	}
+	public double getBatteryCapacity()  {
+		return batteryCapacity;
+	}
+	public void setBatteryCapacity(double batteryCapacity)  {
+		this.batteryCapacity = batteryCapacity;
+	}
+	public double getDisplayInches()  {
+		return displayInches;
+	}
+	public void setDisplayInches(double displayInches)  {
+		this.displayInches = displayInches;
+	}
+	public double getMemoryRom()  {
+		return memoryRom;
+	}
+	public void setMemoryRom(double memoryRom)  {
+		this.memoryRom = memoryRom;
+	}
+	public double getFlashMemoryCapacity()  {
+		return flashMemoryCapacity;
+	}
+	public void setFlashMemoryCapacity(double flashMemoryCapacity) {
+		this.flashMemoryCapacity = flashMemoryCapacity;
+	}
+	public String getColor()  {
+		return color;
+	}
+	public void setColor(String color)  {
+		this.color = color;
+	}
+}
+
