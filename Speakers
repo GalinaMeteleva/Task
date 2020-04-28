@@ -1,0 +1,86 @@
+package by.tc.task01.entity;
+
+public class Speakers extends Appliance  {
+	
+	public Speakers()  {
+	}
+	
+	Speakers speakers = new Speakers();
+	
+	public Speakers getSpeakers() {
+		return speakers;
+	}
+	public void setSpeakers(Speakers speakers)  {
+		this.speakers = speakers;
+	}
+	@Override
+	public int hashCode()  {
+		final int prime = 31;
+		int result = super.hashCode();
+		result = prime * result + ((speakers == null) ? 0 : speakers.hashCode());
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj)  {
+		if(this == obj)  {
+			return true;
+		}
+		if(!super.equals(obj)) {
+			return false;
+		}
+		if(getClass() != obj.getClass())  {
+			return false;
+		}
+		Speakers other = (Speakers) obj;
+		if(speakers == null)  {
+			if(other.speakers != null)  {
+				return false;
+			}
+		}
+		else if(!speakers.equals(other.speakers))  {
+			return false;
+		}
+		return true;
+	}
+	@Override
+	public String toString()  {
+		return "speakers" + speakers;
+	}
+
+	private double powerConsumption;
+	private double numberOfSpeakers;
+	private double frequencyRange;
+	private double cordLength;
+	
+	public Speakers(double powerConsumption, double numberOfSpeakers, double frequencyRange, double cordLength)  {
+		this.powerConsumption = powerConsumption;
+		this.numberOfSpeakers = numberOfSpeakers;
+		this.frequencyRange = frequencyRange;
+		this.cordLength = cordLength;
+	}
+	public double getPowerConsumption()  {
+		return powerConsumption;
+	}
+	public void setPowerConsumption(double powerConsumption)  {
+		this.powerConsumption = powerConsumption;
+	}
+	public double getNumberOfSpeakers()  {
+		return numberOfSpeakers;
+	}
+	public void setNumberOfSpeakers(double numberOfSpeakers)  {
+		this.numberOfSpeakers = numberOfSpeakers;
+	}
+	public double getFrequencyRange()  {
+		return frequencyRange;
+	}
+	public void setFrequencyRange(double frequencyRange)  {
+		this.frequencyRange = frequencyRange;
+	}
+	public double getCordLength()  {
+		return cordLength;
+	}
+	public void setCordLength(double cordLength)  {
+		this.cordLength = cordLength;
+	}
+}
+
