@@ -1,0 +1,20 @@
+package by.tc.task01.main;
+
+import by.tc.task01.entity.Appliance;
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class PrintApplianceInfo {
+	
+	public static void print(Appliance appliance)  {
+		
+		System.out.println(appliance);
+	}
+	public static void print(List<String>finalAppliancesData)  {
+		
+		System.out.println(finalAppliancesData);
+		
+	}
+}
+
