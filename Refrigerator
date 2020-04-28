@@ -1,0 +1,101 @@
+package by.tc.task01.entity;
+
+public class Refrigerator extends Appliance  {
+	
+	public Refrigerator()  {
+	}
+	
+	Refrigerator refrigerator = new Refrigerator();
+	
+	public Refrigerator getRefrigerator()  {
+		return refrigerator;
+	}
+	public void setRefrigerator(Refrigerator refrigerator)  {
+		this.refrigerator = refrigerator;
+	}
+	@Override
+	public int hashCode()  {
+		final int prime = 31;
+		int result = super.hashCode();
+		result = prime * result + ((refrigerator == null) ? 0 : refrigerator.hashCode());
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj)  {
+		if(this == obj)  {
+			return true;
+		}
+		if(!super.equals(obj)) {
+			return false;
+		}
+		if(getClass() != obj.getClass())  {
+			return false;
+		}
+		Refrigerator other = (Refrigerator) obj;
+		if(refrigerator == null)  {
+			if(other.refrigerator != null)  {
+				return false;
+			}
+		}
+		else if(!refrigerator.equals(other.refrigerator))  {
+			return false;
+		}
+		return true;
+	}
+	@Override
+	public String toString()  {
+		return "refrigerator" + refrigerator;
+	}
+	
+	private double powerConsumption;
+	private double weight;
+	private double freezerCapacity;
+	private double overallCapacity;
+	private double height;
+	private double width;
+	
+	public Refrigerator(double powerConsumption, double weight, double freezerCapacity, double overallCapacity, double height, double width)  {
+		this.powerConsumption = powerConsumption;
+		this.weight = weight;
+		this.freezerCapacity = freezerCapacity;
+		this.overallCapacity = overallCapacity;
+		this.height = height;
+		this.width = width;
+	}
+	public double getPowerConsumption()  {
+		return powerConsumption;
+	}
+	public void setPowerConsumption(double powerConsumption) {
+		this.powerConsumption = powerConsumption;
+	}
+	public double getWeight()  {
+		return weight;
+	}
+	public void setWeight(double weight)  {
+		this.weight = weight;
+	}
+	public double getFreezerCapacity()  {
+		return freezerCapacity;
+	}
+	public void setFreezerCapacity(double freezerCapacity)  {
+		this.freezerCapacity = freezerCapacity;
+	}
+	public double getOverallCapacity()  {
+		return overallCapacity;
+	}
+	public void setOverallCapacity(double overallCapacity)  {
+		this.overallCapacity = overallCapacity;
+	}
+	public double getHeight()  {
+		return height;
+	}
+	public void setHeight(double height)  {
+		this.height = height;
+	}
+	public double getWidth()  {
+		return width;
+	}
+	public void setWidth(double width)  {
+		this.width = width;
+	}
+}
