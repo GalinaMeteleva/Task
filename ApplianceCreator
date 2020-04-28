@@ -1,0 +1,91 @@
+package by.tc.task01.service.impl;
+
+import by.tc.task01.service.impl.ApplianceServiceImpl;
+import by.tc.task01.entity.Appliance;
+import by.tc.task01.entity.Speakers;
+import by.tc.task01.entity.criteria.Criteria;
+import by.tc.task01.service.impl.CreateMain;
+
+import java.util.Map;
+import java.util.HashMap;
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class ApplianceCreator {
+	
+	public ApplianceCreator()  {
+	}
+	
+	Appliance appliance;
+	
+	String singleApplianceData;
+	String applianceType;
+	
+	Map<String, String> parameters = new HashMap<String, String>();
+	
+	public String getSingleApplianceData()  {
+		return singleApplianceData;
+	}
+	public void setSingleApplianceData(String singleApplianceData)  {
+		this.singleApplianceData = singleApplianceData;
+	}
+	public String getApplianceType()  {
+		return applianceType;
+	}
+	public void setApplianceType(String applianceType)  {
+		this.applianceType = applianceType;
+	}
+	public Map<String, String> getParameters()  {
+		return parameters;
+	}
+	public void setParameters(Map<String, String> parameters)  {
+		this.parameters = parameters;
+	}
+	@Override
+	public int hashCode()  {
+		final int prime = 31;
+		int result = super.hashCode();
+		result = prime * result + ((singleApplianceData == null) ? 0 : singleApplianceData.hashCode());
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj)  {
+		if(this == obj)  {
+			return true;
+		}
+		if(!super.equals(obj)) {
+			return false;
+		}
+		if(getClass() != obj.getClass())  {
+			return false;
+		}
+		ApplianceCreator other = (ApplianceCreator) obj;
+		if(singleApplianceData == null)  {
+			if(other.singleApplianceData != null)  {
+				return false;
+			}
+		}
+		else if(!singleApplianceData.equals(other.singleApplianceData))  {
+			return false;
+		}
+		return true;
+	}
+	@Override
+	public String toString()  {
+		return "singleApplianceData" + singleApplianceData;
+	}
+	
+	public List<Appliance> create(List<String> data)  {
+		
+		for(String d : data)  {
+			Map<String, String> parameters = singleApplianceData.parse(d);
+			applianceType = parameters.get("type");
+		}
+	}
+	public Appliance takeAppliances(List<Appliance>appliances)  {
+		
+		return List<Appliance>appliances;
+	}
+}
+
