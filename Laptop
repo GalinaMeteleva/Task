@@ -1,0 +1,104 @@
+package by.tc.task01.entity;
+
+import by.tc.task01.entity.criteria.SearchCriteria;
+
+public class Laptop extends Appliance  {
+	
+	public Laptop()  {
+	}
+	
+	Laptop laptop = new Laptop ();
+	
+	public Laptop getLaptop()  {
+		return laptop;
+	}
+	public void setLaptop(Laptop laptop)  {
+		this.laptop = laptop;
+	}
+	@Override
+	public int hashCode()  {
+		final int prime = 31;
+		int result = super.hashCode();
+		result = prime * result + ((laptop == null) ? 0 : laptop.hashCode());
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj)  {
+		if(this == obj)  {
+			return true;
+		}
+		if(!super.equals(obj)) {
+			return false;
+		}
+		if(getClass() != obj.getClass())  {
+			return false;
+		}
+		Laptop other = (Laptop) obj;
+		if(laptop == null)  {
+			if(other.laptop != null)  {
+				return false;
+			}
+		}
+		else if(!laptop.equals(other.laptop))  {
+			return false;
+		}
+		return true;
+	}
+	@Override
+	public String toString()  {
+		return "laptop" + laptop;
+	}
+	
+	private double batteryCapacity;
+	private String os;
+	private double memoryRom;
+	private double systemMemory;
+	private double cpu;
+	private double displayInches;
+	
+	public Laptop(double batteryCapacity, String os, double memoryRom, double systemMemory, double cpu, double displayInches)  {
+		this.batteryCapacity = batteryCapacity;
+		this.os = os;
+		this.memoryRom = memoryRom;
+		this.systemMemory = systemMemory;
+		this.cpu = cpu;
+		this.displayInches = displayInches;
+	}
+	public double getBatteryCapacity()  {
+		return batteryCapacity;
+	}
+	public void setBatteryCapacity(double batteryCapacity)  {
+		this.batteryCapacity = batteryCapacity;
+	}
+	public String getOs()  {
+		return os;
+	}
+	public void setOs(String os)  {
+		this.os = os;
+	}
+	public double getMemoryRom()  {
+		return memoryRom;
+	}
+	public void setMemoryRom(double memoryRom)  {
+		this.memoryRom = memoryRom;
+	}
+	public double getSystemMemory()  {
+		return systemMemory;
+	}
+	public void setSystemMemory(double systemMemory)  {
+		this.systemMemory = systemMemory;
+	}
+	public double getCpu()  {
+		return cpu;
+	}
+	public void setCpu(double cpu)  {
+		this.cpu = cpu;
+	}
+	public double getDisplayInches()  {
+		return displayInches;
+	}
+	public void setDisplayInches(double displayInches)  {
+		this.displayInches = displayInches;
+	}
+}
+
