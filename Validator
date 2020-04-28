@@ -6,7 +6,12 @@ public class Validator {
 	
 	public static boolean criteriaValidator(Criteria criteria)  {
 		
-		return true;
+		if(criteria != null)  {
+			return true;
+		}
+		else {
+			return false;
+		}
 	}
-  
 }
+
