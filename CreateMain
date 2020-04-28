@@ -1,0 +1,31 @@
+package by.tc.task01.service.impl;
+
+import by.tc.task01.service.impl.CreateLaptop;
+import by.tc.task01.service.impl.CreateOven;
+import by.tc.task01.service.impl.CreateRefrigerator;
+import by.tc.task01.service.impl.CreateSpeakers;
+import by.tc.task01.service.impl.CreateTabletPC;
+import by.tc.task01.service.impl.CreateVacuumCleaner;
+import by.tc.task01.entity.Appliance;
+
+import java.util.List;
+import java.util.ArrayList;
+
+public class CreateMain {
+	
+	public CreateMain()  {
+	}
+	
+	public static void main(String[] args)  {
+		
+		Appliance appliance;
+	}
+	List<Appliance> appliances = new ArrayList<Appliance>();
+	
+	public Appliance getAppliances()  {
+		return List<Appliances> appliances;
+	}
+
+}
+
+
